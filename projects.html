@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+100 Projects | TechPig
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<section class="page-header">
+
+    <div class="container">
+
+        <p>
+            THE CHALLENGE
+        </p>
+
+        <h1>
+            100 Projects
+        </h1>
+
+
+        <p class="page-description">
+
+            One hundred projects across
+            software, hardware, AI,
+            cybersecurity, cloud computing
+            and more.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<section class="section">
+
+    <div class="container">
+
+
+        <!-- SEARCH -->
+
+        <div class="project-controls">
+
+
+            <input
+                type="text"
+                id="projectSearch"
+                placeholder="Search projects..."
+                onkeyup="filterProjects()"
+            >
+
+
+            <select
+                id="statusFilter"
+                onchange="filterProjects()"
+            >
+
+                <option value="all">
+                    All Statuses
+                </option>
+
+                <option value="Completed">
+                    Completed
+                </option>
+
+                <option value="In Progress">
+                    In Progress
+                </option>
+
+                <option value="Planned">
+                    Planned
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- PROJECT GRID -->
+
+        <div
+            class="project-grid"
+            id="projectGrid"
+        >
+
+
+            {% for project in projects %}
+
+
+            <div
+                class="project-card searchable-project"
+                data-name="{{ project.name }}"
+                data-status="{{ project.status }}"
+            >
+
+
+                <div class="project-top">
+
+
+                    <span class="project-number">
+
+                        #{{ project.number }}
+
+                    </span>
+
+
+                    {% if project.status == "Completed" %}
+
+                        <span class="status completed">
+
+                            Completed
+
+                        </span>
+
+
+                    {% elif project.status == "In Progress" %}
+
+                        <span class="status in-progress">
+
+                            In Progress
+
+                        </span>
+
+
+                    {% else %}
+
+                        <span class="status planned">
+
+                            Planned
+
+                        </span>
+
+                    {% endif %}
+
+
+                </div>
+
+
+                <h3>
+
+                    {{ project.name }}
+
+                </h3>
+
+
+                <p class="project-category">
+
+                    {{ project.category }}
+
+                </p>
+
+
+                <p>
+
+                    {{ project.description }}
+
+                </p>
+
+
+            </div>
+
+
+            {% endfor %}
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

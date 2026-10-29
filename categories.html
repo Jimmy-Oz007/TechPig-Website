@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+Categories | TechPig
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<section class="page-header">
+
+    <div class="container">
+
+        <p>
+            EXPLORE
+        </p>
+
+        <h1>
+            Project Categories
+        </h1>
+
+
+        <p class="page-description">
+
+            Explore TechPig projects
+            by technology and area of interest.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<section class="section">
+
+    <div class="container">
+
+
+        {% for category in categories %}
+
+
+        <div class="category-section">
+
+
+            <h2>
+
+                {{ category }}
+
+            </h2>
+
+
+            <div class="project-grid">
+
+
+                {% for project in projects %}
+
+
+                    {% if project.category == category %}
+
+
+                    <div class="project-card">
+
+
+                        <span class="project-number">
+
+                            #{{ project.number }}
+
+                        </span>
+
+
+                        <h3>
+
+                            {{ project.name }}
+
+                        </h3>
+
+
+                        {% if project.status == "Completed" %}
+
+                            <span class="status completed">
+
+                                Completed
+
+                            </span>
+
+
+                        {% elif project.status == "In Progress" %}
+
+                            <span class="status in-progress">
+
+                                In Progress
+
+                            </span>
+
+
+                        {% else %}
+
+                            <span class="status planned">
+
+                                Planned
+
+                            </span>
+
+                        {% endif %}
+
+
+                        <p>
+
+                            {{ project.description }}
+
+                        </p>
+
+
+                    </div>
+
+
+                    {% endif %}
+
+
+                {% endfor %}
+
+
+            </div>
+
+        </div>
+
+
+        {% endfor %}
+
+
+    </div>
+
+</section>
+
+
+{% endblock %}

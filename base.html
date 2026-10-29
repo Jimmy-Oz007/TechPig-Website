@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {% block title %}
+        TechPig
+        {% endblock %}
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="/" class="logo">
+            TECH<span>PIG</span>
+        </a>
+
+
+        <button
+            class="menu-button"
+            onclick="toggleMenu()"
+        >
+            ☰
+        </button>
+
+
+        <div
+            class="nav-links"
+            id="navLinks"
+        >
+
+            <a href="/">Home</a>
+
+            <a href="/projects">
+                100 Projects
+            </a>
+
+            <a href="/categories">
+                Categories
+            </a>
+
+            <a href="/suggest">
+                Suggest
+            </a>
+
+            <a href="/about">
+                About
+            </a>
+
+            <a
+                href="#"
+                class="youtube-link"
+            >
+                YouTube
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- FLASH MESSAGES -->
+
+<div class="container">
+
+    {% with messages = get_flashed_messages() %}
+
+        {% if messages %}
+
+            {% for message in messages %}
+
+                <div class="flash-message">
+
+                    {{ message }}
+
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+    {% endwith %}
+
+</div>
+
+
+
+<!-- PAGE CONTENT -->
+
+<main>
+
+    {% block content %}
+
+    {% endblock %}
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div>
+
+            <h3>
+                TECH<span>PIG</span>
+            </h3>
+
+            <p>
+                Building 100 IT projects and
+                documenting the journey.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="/projects">
+                Projects
+            </a>
+
+            <a href="/suggest">
+                Suggest
+            </a>
+
+            <a href="/about">
+                About
+            </a>
+
+            <a href="#">
+                GitHub
+            </a>
+
+            <a href="#">
+                YouTube
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 TechPig
+
+    </div>
+
+</footer>
+
+
+
+<script
+    src="{{ url_for('static', filename='script.js') }}"
+></script>
+
+
+</body>
+
+</html>

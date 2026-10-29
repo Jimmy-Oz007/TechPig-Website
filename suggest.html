@@ -1,0 +1,234 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+Suggest a Project | TechPig
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<section class="page-header">
+
+    <div class="container">
+
+        <p>
+            YOUR IDEA
+        </p>
+
+        <h1>
+            Suggest a Project
+        </h1>
+
+
+        <p class="page-description">
+
+            Have something you think
+            TechPig should build?
+
+            Send it in.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="suggest-layout">
+
+
+            <div class="suggest-info">
+
+
+                <h2>
+
+                    Help choose a future project.
+
+                </h2>
+
+
+                <p>
+
+                    TechPig is working towards
+                    completing 100 IT projects.
+
+                    Your suggestion could become
+                    one of them.
+
+                </p>
+
+
+                <h3>
+                    Good ideas include:
+                </h3>
+
+
+                <ul>
+
+                    <li>
+                        Web applications
+                    </li>
+
+                    <li>
+                        Raspberry Pi projects
+                    </li>
+
+                    <li>
+                        AI tools
+                    </li>
+
+                    <li>
+                        Cybersecurity projects
+                    </li>
+
+                    <li>
+                        Games
+                    </li>
+
+                    <li>
+                        Automation tools
+                    </li>
+
+                    <li>
+                        Cloud applications
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+
+
+            <form
+                method="POST"
+                class="suggest-form"
+            >
+
+
+                <label>
+                    Your Name
+                </label>
+
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Optional"
+                >
+
+
+
+                <label>
+                    Project Name
+                </label>
+
+
+                <input
+                    type="text"
+                    name="project_name"
+                    placeholder="Example: Smart Mirror"
+                    required
+                >
+
+
+
+                <label>
+                    Category
+                </label>
+
+
+                <select
+                    name="category"
+                    required
+                >
+
+                    <option value="">
+                        Choose category
+                    </option>
+
+                    <option>
+                        Web Development
+                    </option>
+
+                    <option>
+                        Artificial Intelligence
+                    </option>
+
+                    <option>
+                        Hardware
+                    </option>
+
+                    <option>
+                        Cybersecurity
+                    </option>
+
+                    <option>
+                        Cloud
+                    </option>
+
+                    <option>
+                        Game Development
+                    </option>
+
+                    <option>
+                        Automation
+                    </option>
+
+                    <option>
+                        Networking
+                    </option>
+
+                    <option>
+                        Other
+                    </option>
+
+                </select>
+
+
+
+                <label>
+                    Describe Your Idea
+                </label>
+
+
+                <textarea
+                    name="description"
+                    placeholder="What should TechPig build?"
+                    required
+                ></textarea>
+
+
+
+                <button
+                    type="submit"
+                    class="primary-button form-button"
+                >
+
+                    Submit Idea
+
+                </button>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,292 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+TechPig | 100 IT Projects
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <p class="hero-label">
+            THE 100 PROJECT CHALLENGE
+        </p>
+
+
+        <h1>
+
+            BUILD.
+
+            <span>
+                LEARN.
+            </span>
+
+            REPEAT.
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            TechPig is a journey to build
+            100 IT projects from scratch,
+            learn new technologies and
+            document everything along the way.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="/projects"
+                class="primary-button"
+            >
+                Explore Projects
+            </a>
+
+
+            <a
+                href="/suggest"
+                class="secondary-button"
+            >
+                Suggest a Project
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PROGRESS -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p>
+                THE CHALLENGE
+            </p>
+
+            <h2>
+                Progress so far
+            </h2>
+
+        </div>
+
+
+        <div class="progress-wrapper">
+
+            <div class="progress-text">
+
+                {{ completed }}
+
+                <span>
+                    / 100 projects completed
+                </span>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    style="width: {{ completed }}%;"
+                >
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <h3>
+                    {{ completed }}
+                </h3>
+
+                <p>
+                    Completed
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>
+                    {{ in_progress }}
+                </h3>
+
+                <p>
+                    In Progress
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>
+                    {{ planned }}
+                </h3>
+
+                <p>
+                    Planned
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>
+                    {{ 100 - completed }}
+                </h3>
+
+                <p>
+                    Remaining
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- CURRENT PROJECTS -->
+
+<section class="section dark-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p>
+                CURRENT BUILDS
+            </p>
+
+            <h2>
+                What TechPig is building
+            </h2>
+
+        </div>
+
+
+        <div class="project-grid">
+
+            {% for project in projects %}
+
+                {% if project.status == "In Progress" %}
+
+                <div class="project-card">
+
+                    <div class="project-number">
+
+                        PROJECT
+                        {{ project.number }}
+
+                    </div>
+
+
+                    <span class="status in-progress">
+
+                        In Progress
+
+                    </span>
+
+
+                    <h3>
+
+                        {{ project.name }}
+
+                    </h3>
+
+
+                    <p class="project-category">
+
+                        {{ project.category }}
+
+                    </p>
+
+
+                    <p>
+
+                        {{ project.description }}
+
+                    </p>
+
+                </div>
+
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- CALL TO ACTION -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+
+            Got a project idea?
+
+        </h2>
+
+
+        <p>
+
+            Suggest something TechPig
+            should build as part of the
+            100-project challenge.
+
+        </p>
+
+
+        <a
+            href="/suggest"
+            class="primary-button"
+        >
+
+            Submit Your Idea
+
+        </a>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

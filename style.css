@@ -1,0 +1,944 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #0d0d0d;
+
+    color: #f5f5f5;
+
+    line-height: 1.6;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+.narrow-container {
+    max-width: 850px;
+}
+
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar {
+    background: #111;
+
+    border-bottom: 1px solid #272727;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+.nav-container {
+    min-height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.logo {
+    font-size: 25px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+.logo span {
+    color: #ff6a00;
+}
+
+
+.nav-links {
+    display: flex;
+
+    gap: 28px;
+
+    align-items: center;
+}
+
+
+.nav-links a {
+    color: #ccc;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+
+.nav-links a:hover {
+    color: white;
+}
+
+
+.youtube-link {
+    background: #ff6a00;
+
+    color: white !important;
+
+    padding: 9px 16px;
+
+    border-radius: 6px;
+}
+
+
+.menu-button {
+    display: none;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 25px;
+}
+
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 106, 0, 0.15),
+            transparent 40%
+        ),
+        #0d0d0d;
+}
+
+
+.hero-label {
+    color: #ff6a00;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+
+.hero h1 {
+    font-size: clamp(55px, 10vw, 120px);
+
+    line-height: 0.9;
+
+    max-width: 900px;
+
+    letter-spacing: -5px;
+}
+
+
+.hero h1 span {
+    color: #ff6a00;
+}
+
+
+.hero-description {
+    max-width: 650px;
+
+    margin-top: 30px;
+
+    color: #aaa;
+
+    font-size: 19px;
+}
+
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.primary-button,
+.secondary-button {
+
+    display: inline-block;
+
+    padding: 13px 22px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.primary-button {
+    background: #ff6a00;
+
+    color: white;
+
+    border: none;
+}
+
+
+.primary-button:hover {
+    transform: translateY(-2px);
+
+    background: #ff7d22;
+}
+
+
+.secondary-button {
+    border: 1px solid #444;
+
+    color: white;
+}
+
+
+.secondary-button:hover {
+    border-color: white;
+}
+
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.section {
+    padding: 100px 0;
+}
+
+
+.dark-section {
+    background: #111;
+}
+
+
+.section-heading {
+    margin-bottom: 45px;
+}
+
+
+.section-heading p,
+.page-header > .container > p {
+
+    color: #ff6a00;
+
+    letter-spacing: 3px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+.section-heading h2 {
+
+    font-size: 40px;
+
+    margin-top: 5px;
+}
+
+
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.progress-wrapper {
+    margin-bottom: 40px;
+}
+
+
+.progress-text {
+    font-size: 35px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+
+.progress-text span {
+    color: #777;
+
+    font-size: 17px;
+
+    font-weight: normal;
+}
+
+
+.progress-bar {
+    width: 100%;
+
+    height: 12px;
+
+    background: #242424;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.progress-fill {
+    height: 100%;
+
+    background: #ff6a00;
+
+    border-radius: 20px;
+}
+
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.stat-card {
+    background: #161616;
+
+    border: 1px solid #292929;
+
+    padding: 30px;
+
+    border-radius: 10px;
+}
+
+
+.stat-card h3 {
+    color: #ff6a00;
+
+    font-size: 40px;
+}
+
+
+.stat-card p {
+    color: #999;
+}
+
+
+
+/* =========================================
+   PROJECTS
+========================================= */
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.project-card {
+    background: #161616;
+
+    border: 1px solid #292929;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    transition: 0.2s;
+}
+
+
+.project-card:hover {
+    border-color: #ff6a00;
+
+    transform: translateY(-4px);
+}
+
+
+.project-card h3 {
+    font-size: 21px;
+
+    margin: 12px 0 5px;
+}
+
+
+.project-card p {
+    color: #999;
+}
+
+
+.project-number {
+    color: #777;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+.project-category {
+    color: #ff6a00 !important;
+
+    font-size: 13px;
+
+    margin-bottom: 12px;
+}
+
+
+.project-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+
+/* =========================================
+   STATUS BADGES
+========================================= */
+
+.status {
+    display: inline-block;
+
+    font-size: 11px;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-weight: bold;
+}
+
+
+.completed {
+    background: rgba(46, 204, 113, 0.15);
+
+    color: #2ecc71;
+}
+
+
+.in-progress {
+    background: rgba(255, 106, 0, 0.15);
+
+    color: #ff6a00;
+}
+
+
+.planned {
+    background: rgba(52, 152, 219, 0.15);
+
+    color: #3498db;
+}
+
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.page-header {
+    padding: 110px 0 70px;
+
+    background: #111;
+
+    border-bottom: 1px solid #222;
+}
+
+
+.page-header h1 {
+    font-size: clamp(45px, 7vw, 80px);
+
+    margin-top: 5px;
+}
+
+
+.page-description {
+    color: #999;
+
+    max-width: 600px;
+
+    font-size: 18px;
+
+    margin-top: 15px;
+}
+
+
+
+/* =========================================
+   FILTERS
+========================================= */
+
+.project-controls {
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 35px;
+}
+
+
+.project-controls input,
+.project-controls select {
+
+    background: #161616;
+
+    border: 1px solid #333;
+
+    color: white;
+
+    border-radius: 6px;
+
+    padding: 13px;
+
+    font-size: 15px;
+}
+
+
+.project-controls input {
+    flex: 1;
+}
+
+
+
+/* =========================================
+   CATEGORY PAGE
+========================================= */
+
+.category-section {
+    margin-bottom: 70px;
+}
+
+
+.category-section > h2 {
+    font-size: 32px;
+
+    margin-bottom: 25px;
+
+    border-left: 4px solid #ff6a00;
+
+    padding-left: 15px;
+}
+
+
+
+/* =========================================
+   SUGGEST FORM
+========================================= */
+
+.suggest-layout {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+}
+
+
+.suggest-info h2 {
+    font-size: 38px;
+
+    margin-bottom: 20px;
+}
+
+
+.suggest-info p {
+    color: #999;
+
+    margin-bottom: 30px;
+}
+
+
+.suggest-info h3 {
+    margin-bottom: 10px;
+}
+
+
+.suggest-info ul {
+    padding-left: 20px;
+
+    color: #999;
+}
+
+
+.suggest-form {
+    background: #161616;
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    border: 1px solid #292929;
+}
+
+
+.suggest-form label {
+    display: block;
+
+    margin-top: 18px;
+
+    margin-bottom: 6px;
+
+    font-weight: bold;
+}
+
+
+.suggest-form input,
+.suggest-form select,
+.suggest-form textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    background: #0e0e0e;
+
+    color: white;
+
+    border: 1px solid #333;
+
+    border-radius: 6px;
+}
+
+
+.suggest-form textarea {
+    min-height: 140px;
+
+    resize: vertical;
+}
+
+
+.form-button {
+    width: 100%;
+
+    margin-top: 25px;
+}
+
+
+
+/* =========================================
+   FLASH MESSAGE
+========================================= */
+
+.flash-message {
+    margin-top: 20px;
+
+    background: rgba(46, 204, 113, 0.15);
+
+    border: 1px solid #2ecc71;
+
+    color: #2ecc71;
+
+    padding: 14px;
+
+    border-radius: 6px;
+}
+
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about-block {
+    margin-bottom: 70px;
+}
+
+
+.about-block h2 {
+    font-size: 35px;
+
+    margin-bottom: 20px;
+}
+
+
+.about-block p {
+    color: #aaa;
+
+    font-size: 18px;
+
+    margin-bottom: 18px;
+}
+
+
+.big-quote {
+    font-size: 45px;
+
+    color: #ff6a00;
+
+    font-weight: bold;
+
+    padding: 30px 0;
+}
+
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.cta {
+    padding: 110px 0;
+
+    text-align: center;
+
+    background: #ff6a00;
+}
+
+
+.cta h2 {
+    font-size: 48px;
+}
+
+
+.cta p {
+    margin: 15px auto 30px;
+
+    max-width: 600px;
+}
+
+
+.cta .primary-button {
+    background: #111;
+}
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: #080808;
+
+    border-top: 1px solid #222;
+
+    padding-top: 50px;
+}
+
+
+.footer-content {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    padding-bottom: 40px;
+}
+
+
+.footer-content h3 {
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
+
+
+.footer-content h3 span {
+    color: #ff6a00;
+}
+
+
+.footer-content p {
+    color: #777;
+}
+
+
+.footer-links {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    color: #aaa;
+}
+
+
+.footer-links a:hover {
+    color: #ff6a00;
+}
+
+
+.copyright {
+    border-top: 1px solid #222;
+
+    color: #666;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .suggest-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 75px;
+
+        left: 0;
+
+        right: 0;
+
+        background: #111;
+
+        flex-direction: column;
+
+        padding: 25px;
+
+        border-bottom: 1px solid #222;
+    }
+
+
+    .nav-links.active {
+        display: flex;
+    }
+
+
+    .menu-button {
+        display: block;
+    }
+
+}
+
+
+
+@media (max-width: 600px) {
+
+    .section {
+        padding: 70px 0;
+    }
+
+
+    .hero {
+        min-height: 550px;
+    }
+
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+
+    .project-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .project-controls {
+        flex-direction: column;
+    }
+
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+
+    .footer-links {
+        flex-direction: column;
+    }
+
+
+    .cta h2 {
+        font-size: 36px;
+    }
+
+}
